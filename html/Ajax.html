@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title></title>
+    <script type="text/javascript">
+    function ajax() {
+        // header('Access-Control-Allow-Origin:*');
+        var xhr = new XMLHttpRequest();//XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {//readyState == 4表示所有的数据都已经就绪
+                if (xhr.status == 200 || xhr.status == 304) {
+                    document.write(xhr.responseText);
+                } else {
+                    alert(xhr.status);
+                }
+            }
+        };
+        //post请求
+        xhr.open("post", "http://www.yunwii.com:5000/ticket", true);
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.send("fromCity=上海");
+
+        //get请求
+        // xhr.open("get","http://www.yunwii.com:5000/ticket?fromCity=上海",true);
+        // xhr.send(null);
+
+
+        //跨域请求
+        // xhr.open("post","http://www.yunwii.com:5000/ticketFilter",true);
+        // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        // xhr.send("fromCity=上海");
+
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" name="button" value="点击我会弹出hello world" onclick="alert('hello world');">
+    <input type="button" name="button" value="ajax" onclick="ajax();">
+</body>
+
+</html>

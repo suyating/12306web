@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>12306</title>
+    <link rel="stylesheet" type="text/css" href="../web/css/sass/stylesheets/allsass.css">
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/calender.js"></script>
+            <script type="text/javascript">
+            $(function() {
+                $('.doubledate').kuiDate({
+                    className: 'doubledate',
+                    isDisabled: "0" 
+                });
+            });
+            </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 头层 -->
+        <div class="header">
+            <div class="header-top">
+                <div class="green-span">
+                    <span>客服热线：12306</span></br>
+                    <span>意见反馈：12306yjfk@rails.com.cn</span></br>
+                    <span>安装手机12306</span>
+                </div>
+                <div class="logo">
+                    <img src="image/12306logo.png" width="100px" height="100px">
+                    <h1>中国铁路客户服务中心</h1>
+                </div>
+                <div class="enter">
+                    <span>
+                            <a href="#" >注册</a>
+                        </span>
+                    <a href="#">登入</a>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <nav>
+                    <a href="#">客运首页</a>
+                    <a href="#">车票预订</a>
+                    <a href="#">余票查询</a>
+                    <a href="#">出行向导</a>
+                    <a href="#">信息服务</a>
+                </nav>
+            </div>
+        </div>
+        <!-- 中间层 -->
+        <div class="middle">
+            <!-- 选框：地点与时间的选择 -->
+            <div class="search-box">
+                <div>
+                    <div class="search-div fromCity">
+                        <h2>出发地</h2>
+                        <span>From</span>
+                        <br>
+                        <input type="text" name="fromcity" id="fromCity" value="北京">
+                    </div>
+                    <div class="search-div double_arrow" onclick="switchCity()">
+                        <img src="image/往返箭头.png" width="70px" height="45px"></a>
+                    </div>
+                    <div class="search-div toCity">
+                        <h2>目的地</h2>
+                        <span>To</span>
+                        <br>
+                        <input type="text" name="toCity" id="toCity" value="上海">
+                    </div>
+                    <div class="search-div setout_date">
+                        <h2>出发日期</h2>
+                        <span>Set Out Date</span>
+                        <br>
+                        <span class="arrow arrow-left"></span>
+                        <input type="text" name="setoutDate" id="setoutDate" class="doubledate">
+                        <span class="arrow arrow-right"></span>
+                    </div>
+                    <div class="search-div return_date">
+                        <h2>返程日期</h2>
+                        <span>Return Date</span>
+                        <br>
+                        <input type="text" name="returnDate" id="returnDate" class="doubledate">
+                    </div>
+                    <div class="search-div check_box">
+                        <label>返程票 &nbsp;&nbsp;
+                            <input type="checkbox" name="ticket" onclick="colorChange()" class="checkbox">
+                        </label>
+                        <br>
+                        <br>
+                        <label>学生票 &nbsp;&nbsp;
+                            <input type="checkbox" name="ticket" class="checkbox" onclick="colorChange()">
+                        </label>
+                    </div>
+                </div>
+                <!-- 常用路线与快速选择 -->
+                <div>
+                    <div class="choice com_route">
+                        <span>常用路线：</span>
+                        <div>
+                            <a href="">北京-上海</a>
+                            <a href="">北京-济南</a>
+                            <a href="">济南-兰州</a>
+                            <a href="">石家庄-南京</a>
+                            <a href="">郑州-武汉</a>
+                            <a href="">天津-大连</a>
+                            <a href="">南昌-上海</a>
+                            <a href="">厦门-杭州</a>
+                        </div>
+                    </div>
+                    <div class="choice qui_choice">
+                        <span>快速选择：</span>
+                        <a href="">今天</a>
+                        <a href="">明天</a>
+                        <a href="">后天</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 城市列表信息 -->
+            <div class="district-list" id="district-list">
+                <div class="district-list-search">
+                    <span class="close_city">
+                      <img src="image/关闭.png" style="width: 20px;height: 20px;">
+                    </span>
+                    <span>热门</span>
+                    <span>ABCDE</span>
+                    <span>FGHIJ</span>
+                    <span>KLMNO</span>
+                    <span>PQRST</span>
+                    <span>UVWXYZ</span>
+                </div>
+                <table id="district-list-table">
+                    <thead></thead>
+                    <tbody align="center" id="district-list-table-tbody"></tbody>
+                </table>
+            </div>
+            <!-- 日期选项框 -->
+            <!-- <div class="calender" id="calender">
+                日历左边
+               <div class="calender_left" id="calender_left">
+                   <span class="calender_left_pre"></span>
+                   <span>
+                       <a href="#" id="calender_left_a" class="calender_left_a">
+                           <img src="../image/date_left.png">
+                       </a>
+                   </span>
+                   <table class="calender_left_table">
+                       <thead align="center" class="calender_left_thead" id="calender_left_thead">
+                           <tr align="center">
+                               <th>日</th>
+                               <th>一</th>
+                               <th>二</th>
+                               <th>三</th>
+                               <th>四</th>
+                               <th>五</th>
+                               <th>六</th>
+                           </tr>
+                       </thead>
+                       <tbody align="center" class="calender_left_tbody" id="calender_left_tbody">
+                           <tr align="center">
+                               <td>1</td>
+                               <td>2</td>
+                               <td>3</td>
+                               <td>4</td>
+                               <td>5</td>
+                               <td>6</td>
+                               <td>7</td>
+                           </tr>
+                           <tr align="center">
+                               <td>1</td>
+                               <td>2</td>
+                               <td>3</td>
+                               <td>4</td>
+                               <td>5</td>
+                               <td>6</td>
+                               <td>7</td>
+                           </tr>
+                           <tr align="center">
+                               <td>1</td>
+                               <td>2</td>
+                               <td>3</td>
+                               <td>4</td>
+                               <td>5</td>
+                               <td>6</td>
+                               <td>7</td>
+                           </tr>
+                           <tr align="center">
+                               <td>1</td>
+                               <td>2</td>
+                               <td>3</td>
+                               <td>4</td>
+                               <td>5</td>
+                               <td>6</td>
+                               <td>7</td>
+                           </tr>
+                           <tr align="center">
+                               <td>1</td>
+                               <td>2</td>
+                           </tr>
+                       </tbody>
+                   </table>
+           
+               </div>
+               日历右边
+               <div class="calender_right" id="calender_right">
+                   <span id="calender_right_next"></span>
+                   <span>
+                       <a href="#" id="calender_right_a" class="calender_right_a">
+                           <img src="../image/date_right.png">
+                       </a>
+                   </span>
+                   <span class="date_close" id="date_close">
+                       <img src="../image/关闭.png" width="15px" height="15px">
+                   </span>
+                   <table class="calender_right_table">
+                       <thead align="cdnter" class="calender_right_thead" id="calender_right_thead">
+                           <tr align="center">
+                               <th>日</th>
+                               <th>一</th>
+                               <th>二</th>
+                               <th>三</th>
+                               <th>四</th>
+                               <th>五</th>
+                               <th>六</th>
+                           </tr>
+                       </thead>
+                       <tbody align="center" class="calender_right_tbody" id="calender_right_tbody">
+                           <tr align="center">
+                               <td>1</td>
+                               <td>2</td>
+                               <td>3</td>
+                               <td>4</td>
+                               <td>5</td>
+                               <td>6</td>
+                               <td>7</td>
+                           </tr>
+                           <tr align="center">
+                               <td>1</td>
+                               <td>2</td>
+                               <td>3</td>
+                               <td>4</td>
+                               <td>5</td>
+                               <td>6</td>
+                               <td>7</td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </div> -->
+            <!-- <div class="d_pane" id="d_pane">
+                <div class="data_content_pane">
+                    <div class="prev_next_month">
+                        <span class="today"></span>
+                        <span class="tomorrow"></span>
+                        <span class="close">
+                          <img src="../image/关闭.png" style="height: 20px;width: 20px;">
+                        </span>
+                    </div>
+                    <div id="left_table">
+                        <span class="prev_m">
+                          <img src="../image/date_left.png">
+                        </span>
+                        <dl class="data_tab">
+                            <dt>日</dt>
+                            <dt>一</dt>
+                            <dt>二</dt>
+                            <dt>三</dt>
+                            <dt>四</dt>
+                            <dt>五</dt>
+                            <dt>六</dt>
+                        </dl>
+                        <dl class="date_info" id="left_t"></dl>
+                    </div>
+                    <div id="right_table">
+                        <span class="next_m">
+                        <img src="../image/date_right.png">
+                      </span>
+                        <dl class="data_tab">
+                            <dt>日</dt>
+                            <dt>一</dt>
+                            <dt>二</dt>
+                            <dt>三</dt>
+                            <dt>四</dt>
+                            <dt>五</dt>
+                            <dt>六</dt>
+                        </dl>
+                        <dl class="date_info" id="right_t"></dl>
+                    </div>
+                </div>
+            </div> -->
+            <div style="text-align:center;clear:both"></div>
+            <!-- 其他选项 -->
+            <div class="other_choice">
+                <ul>
+                    <li>
+                        <a href="">席别</a>
+                        <span class="arrow arrow-bottom arrow-bottom1"></span>
+                    </li>
+                    <li>
+                        <a href="">列车类型</a>
+                        <span class="arrow arrow-bottom"></span>
+                    </li>
+                    <li>
+                        <a href="">出发时间</a>
+                        <span class="arrow arrow-bottom"></span>
+                    </li>
+                    <li>
+                        <a href="">乘车人</a>
+                        <span class="arrow arrow-bottom arrow-bottom4"></span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 查询车票按钮 -->
+            <button type="button" class="query_btn" id="query_btn" onclick="ticketCheck()">查询车票</button>
+            <!-- 车票列表信息 -->
+            <table class="list-table">
+                <thead align="center">
+                    <tr>
+                        <th>车次</th>
+                        <th>出发站
+                            <br>到达站</th>
+                        <th>出发时间<span class="arrow arrow-top"></span> 到达时间
+                            <span class="arrow arrow-bottom2"></span></th>
+                        <th>历时<span class="arrow arrow-bottom3"></span></th>
+                        <th>商务座</th>
+                        <th>一等座</th>
+                        <th>二等座</th>
+                        <th>高级
+                            <br>软卧</th>
+                        <th>软卧</th>
+                        <th>硬卧</th>
+                        <th>软座</th>
+                        <th>硬座</th>
+                        <th>无座</th>
+                        <th>其他</th>
+                        <th>购买</th>
+                    </tr>
+                </thead>
+                <tbody align="center">
+                    <tr class="odd">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="even">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="odd">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="even">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="odd">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="even">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- 尾部 -->
+        <div class="footer">
+            <p>版权所有　©2008-2015铁道部信息技术中心　中国铁道科学研究院　　　　　　关于我们　|　网站声明　　　京ICP备10009636号</p>
+        </div>
+    </div>
+</body>
+
+</html>

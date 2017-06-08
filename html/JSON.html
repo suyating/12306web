@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<!-- <script type="text/javascript">
+    function Calendar(args){
+    	if(typeof args == "object"){
+    		this.isDoubleCalendar=args.isDoubleCalendar;
+	        this.isPriceShow=args.isPriceShow;
+	        this.isSundaydayOfWeek=args.isSundaydayOfWeek;
+	        this.show=function(){
+	        	alert('是否显示双日历：'+args.isDoubleCalendar);
+	        	alert('是否显示价格：'+args.isPriceShow);
+	        	alert('是否把周日作为一周的第一天：'+args.isSundaydayOfWeek);
+	        }
+    	}
+        
+       
+    }
+    var calender = new Calendar({
+    	isDoubleCalendar:true,
+    	isPriceShow:false,
+    	isSundaydayOfWeek:true
+    });
+    calender.show();
+    // calender.show();
+    // var ticket={
+    // 	fromCity:"北京",
+    // 	toCity:"上海"
+    // };
+    // alert("出发城市是："+ticket.fromCity);
+    </script> -->
+    <script type="text/javascript">
+    	// var ticket={
+    	// 	"fromCity":"北京",
+    	// 	"toCity": "上海",
+     //        "price":{
+     //            "business" : 655,
+     //            "first" : 580,
+     //            "second" : 440,
+     //        }
+    	// 	// "setOutDate":"20170601",
+    	// }
+    	// var jsonText=JSON.stringify(ticket);//把JavaScript对象序列化为JSON字符串
+    	// document.write(jsonText);
+
+    	// var jsonText1='{"fromCity":"北京","toCity":"上海","price":498.5}';
+    	// var ticketCopy=JSON.parse(jsonText1);//将JSON字符串解析为原生JaveScript值
+    	// alert(typeof ticketCopy== "object");
+    	// alert(ticketCopy.fromCity);
+
+
+
+        var book = {
+            "title" : "Professional JavaScript",
+            "authors" :[
+                "Nicholas C. Zakas" ,
+                "Liucihuan"
+            ],
+            "edition" : 3,
+            "year": 2011,
+            // toJSON: function(){ //toJSON()方法
+            //     return this.authors;
+            // }
+            releaseDate: new Date(2017,05,20)
+        };
+        var jsonText = JSON.stringify(book);
+        var bookCopy = JSON.parse(jsonText, function(key, value){
+            if(key == "releaseDate"){
+                return new Date(value);
+            } else{
+                return value;
+            }
+        });
+        document.write(bookCopy.releaseDate.getMonth());
+
+        // var jsonText= JSON.stringify(book, function(key, value){
+        //     switch(key){
+        //         case "authors":
+        //             return value.join("、");//join() 方法用于把数组中的所有元素放入一个字符串。元素是通过指定的分隔符进行分隔的。
+        //         case "year" :
+        //             return 5000;
+        //         case "edition":
+        //             return undefined;
+        //         default:
+        //             return value;
+        //     }
+            
+        // });
+
+        // var jsonText = JSON.stringify(book, null, 1);
+        // document.write(jsonText);
+
+
+
+    </script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+	<input type="button" name="button" value="动态增加script" onclick="addScript();">
+</body>
+<script type="text/javascript">
+function checkTicketNum(args){	
+	var json= eval(args);
+	$.each(json,function(index,item){
+		var price=json[index].price;
+	})
+}
+function addScript(){
+	var script=document.createElement("script");
+	script.src= "http://www.yunwii.com:5000/ticketJsonp?fromCity=上海&toCity=北京&setOutDate=2017-01-28&callback=checkTicketNum";
+	document.body.insertBefore(script,document.body.firstChild);
+}
+</script>
+
+<!-- <script type="text/javascript">
+	function checkTicketNum(args) {
+	    var json = eval(args);//eval()函数可计算某个字符串，并执行其中的的 JavaScript 代码。
+	    $.each(json, function(index, item) {
+	    //each()方法规定为每个匹配元素规定运行的函数。
+	        var first = json[index].first;
+	        alert(first);
+	    });
+	}
+	function addScript() {
+	    var url = "http://www.yunwii.com:5000/ticketJsonp?fromCity=上海&toCity=北京&setOutDate=2017-01-28&callback=checkTicketNum";
+	    var script = document.createElement('script');
+	    script.setAttribute('src', url);//setAttribute() 方法添加指定的属性，并为其赋指定的值。如果这个指定的属性已存在，则仅设置/更改值。
+	    
+	    // 将script元素在网页加载时插入head头部
+	    document.getElementsByTagName('head')[0].appendChild(script);
+	}
+</script> -->
+
+
+<!-- <script type="text/javascript">
+	function handleResponse(response){
+		alert("You`re at IP address" + response.ip + "which is in " + response.city + "," + response.region_name);
+	}
+	function addScript(){
+		var script=document.createElement("script");
+		script.src = "http://freegeoip.net/json/?callback=handleResponse";
+		document.body.insertBefore(script, document.body.firstChild);
+	}
+</script> -->
+
+</html>

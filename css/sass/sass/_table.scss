@@ -1,0 +1,171 @@
+/* Table Style */
+table{
+	margin:auto;
+	border-collapse:collapse;
+}
+
+thead tr th{
+	padding:0;
+	margin: 0 ;
+	font-size:15px;
+	font-weight:normal;
+}
+tbody tr td{
+	padding: 0 ;
+	margin: 0 ;
+	font-size: 14px;
+	text-align:center;
+}
+
+
+/* The informatiom of the ticket list */
+.list-table{
+	width: 1050px;
+	height: 410px;
+	margin: 22px 26px;
+	
+	thead tr th{
+		height: 104px;
+		background-color: #316745;
+		color: #fff;
+		text-align: center;
+		border-right: 3px solid #56956d;
+	}
+	/* tbody tr{
+		&:nth-child(odd){
+			background-color: #efe1b0;
+		}
+		&:nth-child(eveb){
+			background-color: #efdb91;
+		}
+	} */
+	tbody tr td{
+		height: 48px;
+		border:0;
+	}
+}
+.odd{
+	background-color:#efe1b0;
+}
+.even{
+	background-color: #efdb91;
+}
+// .list-table tbody tr：nth-child(odd){
+// 		background-color: #efe1b0;
+// }
+// .list-table tbody tr: nth-child(even){
+// 		background-color: #efdb91;
+// }
+
+
+
+/* Border style */
+.d_pane,.district-list{
+	background-color: #fdffde;
+	border: 1px solid #3d704e;
+}
+/* The informatiom of the purchasing date list */
+/* all display none div */
+.d_pane{
+	// display:none;
+	width: 705px;
+    height: 230px;
+    position: absolute;
+    top: 374px;
+    left: 424px;
+}
+.prev_next_month{
+	height:43px;
+	margin: 20px 0;
+	text-align: center;
+	line-height: 50px;
+	span{
+		padding:0;
+		float: left;
+		font-weight: 900;
+	}
+}
+.today, .tomorrow{
+	width:338px;
+	font-size:18px;
+	font-weight:blod;
+}
+
+#left_table , #right_table{
+	float: left;
+    margin: -15px 25px;
+    padding: 0px 26px;
+    color: #316745;
+    font-size: 15px;
+    width: 297px;
+
+    dl{
+    	font-weight: 600;
+    }
+	dl dt{
+		text-align: center;
+	    width: 35px;
+	    padding: 0 10px;
+	    float: left;
+	}
+}
+.data_tab{
+	border-bottom:1px solid #316745;
+	margin: 0;
+}
+.prev_m{
+	position: absolute;
+    left: 5px;
+    top: 103px;
+}
+.next_m{
+	position: absolute;
+    left: 660px;
+    top: 107px;
+}
+.close{
+	width:55px;
+	position: absolute;
+    left: 640px;
+    top: 0px;
+}
+dl.date_info .td_hui{
+	cursor:default;
+	color:#7bd29b;
+	font-weight:400;
+}
+.date_info .td_hover{
+	color:red;
+	cursor:pointer;
+}
+
+/* The informatiom of the ticket area list */
+.district-list{
+	display:none;
+	width: 526px;
+    height: 208px;
+    position: absolute;
+    left: 146px;
+    top: 374px;
+    tbody tr td{
+    	color: #789676;
+	    padding: 4px 13px;
+	    text-align: left;
+    }
+}
+.district-list-search{
+	height: 30px;
+	width: 400px;
+    margin: 8px auto;
+    font-weight: blod;
+    text-align: center;
+    border-bottom: 1px solid #000;
+	span{
+		padding:0 5px;
+	}
+}
+.close_city{
+	position: absolute;
+    left: 485px;
+    top: 11px;
+}

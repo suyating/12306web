@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		var hotPalce=[
+		{
+			city: '北京',
+			pinyin:"B"
+		},
+		{
+			city: "上海",
+			pinyin:'S'
+		},
+		{
+			city:"厦门",
+			pinyin:"X"
+		},
+		{
+			city:"广州",
+			pinyin:"G"
+		},
+		{
+			city:"上饶",
+			pinyin:"S"
+		}
+		];
+		// function sortByPinyin(item,index,array){
+		// 	if(item.pinyin == "S")
+		// 	{
+		// 		return true;
+		// 	}
+		// 	else{
+		// 		return false;
+		// 	}
+		// } 
+		// var filterArray=hotPalce.filter(sortByPinyin);
+		// alert(filterArray.length);
+		// alert(filterArray[0].city);
+
+		function sort(initialletter){
+			var anonymousFunction = function(item,index,array){
+				var pinyin=item.pinyin;
+				if(pinyin==initialletter){
+					return true;
+				}else{
+					return false;
+				}
+			};
+			return anonymousFunction
+		}
+		var filterArray = hotPalce.filter(sort("B"));
+		alert(filterArray.length);
+		alert(filterArray[0].city);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

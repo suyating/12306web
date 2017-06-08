@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>日历</title>
+    <style type="text/css">
+    .calendar {
+        width: 705px;
+        height: 230px;
+        background-color: #fdffde;
+    }
+    
+    .calendar_div {
+        float: left;
+        text-align: center;
+        margin: 20px 40px;
+        border-collapse: collapse;
+    }
+    
+    .calender_div span {
+        font-size: 18px;
+        padding-bottom: 3px;
+        font-weight: bold;
+        border-bottom: 1px solid #000;
+    }
+    /* .calender_div table{
+				border-top: 1px solid #000;
+			} */
+    
+    .calendar_div thead tr th {
+        height: 25px;
+        padding: 0 9px;
+        color: #1c3852;
+        font-size: 15px;
+    }
+    
+    .calendar_div tbody tr td {
+        color: #316745;
+        font-size: 14px;
+        padding: 4px 0;
+    }
+    .calender1{
+        display: none;
+    }
+    </style>
+    <script type="text/javascript">
+    function generateDays(month) {
+        var days = caculateDaysOfMonth(month);
+        var contentStr = "<tr>";
+        for (var i = 1; i <= days; i++) {
+            /*document.write("<td>"+ i + "</td>");*/
+            contentStr += "<td>" + i + "</td>";
+
+            if (i % 7 == 0) {
+                contentStr += "</tr><tr>"
+            }
+        }
+
+        contentStr += "</tr>";
+        return contentStr;
+
+    }
+    var caculateDaysOfMonth = function(month) {
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                days = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                days = 30;
+                break;
+            case 2:
+                days = 28;
+                break;
+        }
+        return days;
+    };
+    /*var temp = caculateDaysOfMonth;
+    alert(temp(4));*/
+    // function nextMonth(month){
+    // 	//month=month+1
+    // 	month += 1;
+
+    // }
+    // var nowMonth = 3;
+    // nextMonth(nowMonth);
+    // alert(nowMonth);
+
+    function init() {
+    	var tbody = document.createElement("tbody");
+    	document.getElementById("calendarTable").appendChild(tbody);
+    	tbody.innerHTML= generateDays(4);
+        /*var tbody_right = document.createElement("tbody");
+        document.getElementById('calendarTableRight').appendChild(tbody_right);
+        tbody_right.innerHTML = generateDays(5);*/
+        /*document.getElementById("calendar_div_left_tbody").innerHTML = generateDays(2);*/
+        /*document.getElementById("calendar_div_right_tbody").innerHTML = generateDays(3);*/
+
+    }
+    </script>
+    
+</head>
+
+<body onload="init()">
+    <input type="button" name="button"  value="点击">
+    <div class="calendar">
+        <div class="calendar_div">
+            <span>2017年5月</span>
+            <table id="calendarTable">
+                <thead align="center">
+                    <tr>
+                        <th>日</th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                    </tr>
+                </thead>
+                <tbody align="center" id="calendar_div_left_tbody">
+                    <!-- <tr>
+						<td>01</td>
+						<td>02</td>
+						<td>03</td>
+						<td>04</td>
+						<td>05</td>
+						<td>06</td>
+						<td>07</td>
+					</tr>
+					<tr>
+						<td>08</td>
+						<td>09</td>
+						<td>10</td>
+						<td>11</td>
+						<td>12</td>
+						<td>13</td>
+						<td>14</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>16</td>
+						<td>17</td>
+						<td>18</td>
+						<td>19</td>
+						<td>20</td>
+						<td>21</td>
+					</tr>
+					<tr>
+						<td>22</td>
+						<td>23</td>
+						<td>24</td>
+						<td>25</td>
+						<td>26</td>
+						<td>27</td>
+						<td>28</td>
+					</tr>
+					<tr>
+						<td>29</td>
+						<td>30</td>
+						<td>31</td>
+					</tr> -->
+                    <!-- <script type="text/javascript">
+                    	generateDays(11);
+                    </script> -->
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="calendar_div">
+            <span>2017年5月</span>
+            <table>
+                <thead align="center">
+                    <tr>
+                        <th>日</th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                    </tr>
+                </thead>
+                <tbody align="center" id="calendar_div_right_tbody">
+                    <tr>
+                        <td>01</td>
+                        <td>02</td>
+                        <td>03</td>
+                        <td>04</td>
+                        <td>05</td>
+                        <td>06</td>
+                        <td>07</td>
+                    </tr>
+                    <tr>
+                        <td>08</td>
+                        <td>09</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                    </tr>
+                    <script type="text/javascript">
+                    generateDays(2);
+                    </script>
+                </tbody>
+            </table>
+        </div> -->
+    </div>
+    <span>
+        约会日期<input class="calendar1" type="date" name="date">
+    </span>
+    <span>
+        显示星期<input class="calendar1" type="week" name="week">
+    </span></br>
+    颜色:<input type="color" name="color" style="border: none;">
+</body>
+
+</html>

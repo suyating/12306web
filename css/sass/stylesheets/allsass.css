@@ -1,0 +1,639 @@
+/* set the compatubility */
+/* line 2, ../sass/_main.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* background style */
+/* line 9, ../sass/_main.scss */
+body {
+  margin: 0;
+  background-image: url(../image/background.jpg);
+}
+
+/* line 13, ../sass/_main.scss */
+.wrap, .header, .footer {
+  width: 100%;
+  min-width: 1344px;
+  margin: 0 auto;
+}
+
+/* header style */
+/* line 20, ../sass/_main.scss */
+.header {
+  height: 200px;
+  background-color: #fff;
+  font-family: "Microsoft YaHei";
+}
+
+/* line 25, ../sass/_main.scss */
+.header-top {
+  width: 100%;
+  height: 150px;
+  margin: auto;
+  float: left;
+}
+
+/* line 31, ../sass/_main.scss */
+.green-span, .logo, .enter {
+  box-sizing: 150px;
+  color: #316745;
+  font-size: 12px;
+}
+
+/* header-left style */
+/* line 37, ../sass/_main.scss */
+.green-span {
+  width: 280px;
+  position: relative;
+  top: 40px;
+  left: 90px;
+  float: left;
+  line-height: 20px;
+}
+
+/* logo style */
+/* line 47, ../sass/_main.scss */
+.logo {
+  width: 400px;
+  position: absolute;
+  left: 450px;
+  text-align: center;
+}
+/* line 52, ../sass/_main.scss */
+.logo h1 {
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  letter-spacing: 3px;
+  padding-left: 25px;
+  color: #000;
+  font-family: "STLiti";
+}
+
+/* enter style */
+/* line 63, ../sass/_main.scss */
+.enter {
+  width: 150px;
+  position: absolute;
+  top: 78px;
+  left: 1180px;
+  line-height: 40px;
+}
+/* line 69, ../sass/_main.scss */
+.enter a {
+  padding: 0 15px;
+  color: #316745;
+}
+/* line 73, ../sass/_main.scss */
+.enter span {
+  border-right: 1px solid #316745;
+}
+
+/* middle style */
+/* line 79, ../sass/_main.scss */
+.middle {
+  height: 890px;
+  width: 1100px;
+  background-color: #d9e7b8;
+  margin: 16px auto;
+}
+
+/* footer style */
+/* line 88, ../sass/_main.scss */
+.footer {
+  width: 100%;
+  height: 68px;
+  background-color: #000000;
+}
+/* line 92, ../sass/_main.scss */
+.footer p {
+  margin-left: 400px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 68px;
+  text-align: center;
+}
+
+/* Table Style */
+/* line 2, ../sass/_table.scss */
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+/* line 7, ../sass/_table.scss */
+thead tr th {
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+/* line 13, ../sass/_table.scss */
+tbody tr td {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* The informatiom of the ticket list */
+/* line 22, ../sass/_table.scss */
+.list-table {
+  width: 1050px;
+  height: 410px;
+  margin: 22px 26px;
+  /* tbody tr{
+  	&:nth-child(odd){
+  		background-color: #efe1b0;
+  	}
+  	&:nth-child(eveb){
+  		background-color: #efdb91;
+  	}
+  } */
+}
+/* line 27, ../sass/_table.scss */
+.list-table thead tr th {
+  height: 104px;
+  background-color: #316745;
+  color: #fff;
+  text-align: center;
+  border-right: 3px solid #56956d;
+}
+/* line 42, ../sass/_table.scss */
+.list-table tbody tr td {
+  height: 48px;
+  border: 0;
+}
+
+/* line 47, ../sass/_table.scss */
+.odd {
+  background-color: #efe1b0;
+}
+
+/* line 50, ../sass/_table.scss */
+.even {
+  background-color: #efdb91;
+}
+
+/* Border style */
+/* line 63, ../sass/_table.scss */
+.d_pane, .district-list {
+  background-color: #fdffde;
+  border: 1px solid #3d704e;
+}
+
+/* The informatiom of the purchasing date list */
+/* all display none div */
+/* line 69, ../sass/_table.scss */
+.d_pane {
+  width: 705px;
+  height: 230px;
+  position: absolute;
+  top: 374px;
+  left: 424px;
+}
+
+/* line 77, ../sass/_table.scss */
+.prev_next_month {
+  height: 43px;
+  margin: 20px 0;
+  text-align: center;
+  line-height: 50px;
+}
+/* line 82, ../sass/_table.scss */
+.prev_next_month span {
+  padding: 0;
+  float: left;
+  font-weight: 900;
+}
+
+/* line 88, ../sass/_table.scss */
+.today, .tomorrow {
+  width: 338px;
+  font-size: 18px;
+  font-weight: blod;
+}
+
+/* line 94, ../sass/_table.scss */
+#left_table, #right_table {
+  float: left;
+  margin: -15px 25px;
+  padding: 0px 26px;
+  color: #316745;
+  font-size: 15px;
+  width: 297px;
+}
+/* line 102, ../sass/_table.scss */
+#left_table dl, #right_table dl {
+  font-weight: 600;
+}
+/* line 105, ../sass/_table.scss */
+#left_table dl dt, #right_table dl dt {
+  text-align: center;
+  width: 35px;
+  padding: 0 10px;
+  float: left;
+}
+
+/* line 112, ../sass/_table.scss */
+.data_tab {
+  border-bottom: 1px solid #316745;
+  margin: 0;
+}
+
+/* line 116, ../sass/_table.scss */
+.prev_m {
+  position: absolute;
+  left: 5px;
+  top: 103px;
+}
+
+/* line 121, ../sass/_table.scss */
+.next_m {
+  position: absolute;
+  left: 660px;
+  top: 107px;
+}
+
+/* line 126, ../sass/_table.scss */
+.close {
+  width: 55px;
+  position: absolute;
+  left: 640px;
+  top: 0px;
+}
+
+/* line 132, ../sass/_table.scss */
+dl.date_info .td_hui {
+  cursor: default;
+  color: #7bd29b;
+  font-weight: 400;
+}
+
+/* line 137, ../sass/_table.scss */
+.date_info .td_hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* The informatiom of the ticket area list */
+/* line 143, ../sass/_table.scss */
+.district-list {
+  display: none;
+  width: 526px;
+  height: 208px;
+  position: absolute;
+  left: 146px;
+  top: 374px;
+}
+/* line 150, ../sass/_table.scss */
+.district-list tbody tr td {
+  color: #789676;
+  padding: 4px 13px;
+  text-align: left;
+}
+
+/* line 156, ../sass/_table.scss */
+.district-list-search {
+  height: 30px;
+  width: 400px;
+  margin: 8px auto;
+  font-weight: blod;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+/* line 163, ../sass/_table.scss */
+.district-list-search span {
+  padding: 0 5px;
+}
+
+/* line 167, ../sass/_table.scss */
+.close_city {
+  position: absolute;
+  left: 485px;
+  top: 11px;
+}
+
+/* arrow style */
+/* line 2, ../sass/_arrow.scss */
+.arrow {
+  width: 0;
+  height: 0;
+  position: relative;
+  display: block;
+  line-height: 0;
+}
+
+/* line 9, ../sass/_arrow.scss */
+.arrow-left {
+  top: 28px;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #316745;
+  border-bottom: 10px solid transparent;
+}
+
+/* line 15, ../sass/_arrow.scss */
+.arrow-right {
+  top: -45px;
+  left: 190px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #316745;
+  border-bottom: 10px solid transparent;
+}
+
+/* line 23, ../sass/_arrow.scss */
+.arrow-bottom {
+  top: 5px;
+  left: 49px;
+  /* text-align: center; */
+  display: none;
+  border-left: 10px solid transparent;
+  border-top: 10px solid #316745;
+  border-right: 10px solid transparent;
+}
+
+/* line 32, ../sass/_arrow.scss */
+.arrow-bottom1 {
+  left: 25px;
+}
+
+/* line 33, ../sass/_arrow.scss */
+.arrow-bottom4 {
+  left: 41px;
+}
+
+/* line 34, ../sass/_arrow.scss */
+.arrow-top {
+  top: -12px;
+  left: 87px;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  border-right: 5px solid transparent;
+}
+
+/* line 41, ../sass/_arrow.scss */
+.arrow-bottom2 {
+  top: -10px;
+  left: 87px;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #fff;
+  border-right: 5px solid transparent;
+}
+
+/* line 48, ../sass/_arrow.scss */
+.arrow-bottom3 {
+  top: -10px;
+  left: 42px;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #fff;
+  border-right: 5px solid transparent;
+}
+
+/* line 56, ../sass/_arrow.scss */
+.date_left {
+  position: absolute;
+  left: 0px;
+  top: 94px;
+}
+
+/* line 61, ../sass/_arrow.scss */
+.date_right {
+  position: absolute;
+  left: 667px;
+  top: 91px;
+}
+
+/* line 66, ../sass/_arrow.scss */
+.date_close {
+  /* float: right; */
+  position: absolute;
+  left: 665px;
+  top: 10px;
+}
+
+/* Button style */
+/* line 2, ../sass/_button.scss */
+.query_btn {
+  width: 400px;
+  height: 100px;
+  margin: 0px 321px;
+  font-size: 36px;
+  color: #fff;
+  line-height: 100px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 0;
+  /* -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+  box-shadow:inset -1px -1px 0px 1px rgba(254, 120, 30, 0.47); */
+  background: linear-gradient(62deg, #ff9f24, 39%, #fe781e);
+  background: -moz-linear-gradient(62deg, #ff9f24, 39%, #fe781e);
+  background: -webkit-gradient(linear, left, right, from(#ff9f24), color-stop(#fe781e));
+  background: -webkit-linear-gradient(62deg, #ff9f24, 39%, #fe781e);
+  background: -o-linear-gradient(62deg, #ff9f24, 39%, #fe781e);
+  background: -ms-linear-gradient(62deg, #ff9f24, 39%, #fe781e);
+}
+
+/* line 1, ../sass/_menu.scss */
+a {
+  text-decoration: none;
+}
+/* line 3, ../sass/_menu.scss */
+a:hover {
+  font-weight: bold;
+}
+
+/* line 7, ../sass/_menu.scss */
+li {
+  float: left;
+  list-style: none;
+}
+
+/* header menu style */
+/* line 12, ../sass/_menu.scss */
+.header-bottom {
+  height: 50px;
+  width: 100%;
+  margin: auto;
+}
+/* line 16, ../sass/_menu.scss */
+.header-bottom nav {
+  width: 1100px;
+  height: 50px;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  line-height: 50px;
+}
+/* line 24, ../sass/_menu.scss */
+.header-bottom a {
+  padding: 0 70px;
+  font-size: 14px;
+  color: #316745;
+}
+
+/* other choice menu style */
+/* line 33, ../sass/_menu.scss */
+.other_choice {
+  height: 60px;
+  margin: 10px auto;
+}
+/* line 36, ../sass/_menu.scss */
+.other_choice li {
+  margin: 0 63px;
+}
+/* line 39, ../sass/_menu.scss */
+.other_choice a {
+  font-size: 24px;
+  padding: 0 15px;
+  color: #316745;
+}
+
+/* search-box style */
+/* line 2, ../sass/_module.scss */
+.search-box {
+  height: 210px;
+  width: 100%;
+  margin: auto;
+  /* border:1px solid #E93C3C; */
+}
+
+/* line 8, ../sass/_module.scss */
+.search-div {
+  box-sizing: 160px;
+  margin-top: 40px;
+  margin-left: 20px;
+  float: left;
+  color: #316745;
+  text-align: center;
+  /* border:1px solid #000;  */
+}
+/* line 16, ../sass/_module.scss */
+.search-div h2 {
+  margin: 0;
+}
+/* line 19, ../sass/_module.scss */
+.search-div span {
+  margin: 0;
+  font-size: 8px;
+}
+/* line 23, ../sass/_module.scss */
+.search-div input {
+  width: 160px;
+  height: 50px;
+  margin: 10px 0;
+  font-size: 30px;
+  line-height: 30px;
+  color: #a83a00;
+  text-align: center;
+  /* border:1px solid #e1e7c4; */
+  background-color: #f3f9d4;
+  box-shadow: inset rgba(225, 231, 196, 0.73) 2px 2px 2px 4px;
+  -moz-box-shadow: inset rgba(225, 231, 196, 0.73) 2px 2px 2px 4px;
+  -webkit-box-shadow: inset rgba(225, 231, 196, 0.73) 2px 2px 2px 4px;
+}
+
+/* line 38, ../sass/_module.scss */
+.fromCity {
+  margin-left: 71px;
+}
+
+/* line 41, ../sass/_module.scss */
+.toCity {
+  margin-left: 0;
+}
+
+/* line 44, ../sass/_module.scss */
+.double_arrow {
+  margin-top: 102px;
+  margin-left: 0;
+}
+
+/* line 48, ../sass/_module.scss */
+.setout_date {
+  width: 200px;
+  margin-top: 36px;
+  margin-left: 64px;
+  margin-right: 39px;
+}
+/* line 53, ../sass/_module.scss */
+.setout_date input {
+  margin-top: -6px;
+  font-size: 16px;
+}
+
+/* line 58, ../sass/_module.scss */
+.return_date {
+  margin-left: 25px;
+}
+/* line 60, ../sass/_module.scss */
+.return_date input {
+  font-size: 16px;
+}
+
+/* line 65, ../sass/_module.scss */
+.check_box {
+  /* margin-left: 120px; */
+  margin-top: 67px;
+  padding: 15px 0;
+  height: 100px;
+  font-size: 14px;
+  line-height: 20px;
+}
+/* line 72, ../sass/_module.scss */
+.check_box label {
+  font-size: 14px;
+}
+/* line 75, ../sass/_module.scss */
+.check_box input {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+/* choice style */
+/* line 84, ../sass/_module.scss */
+.choice {
+  height: 50px;
+  margin-top: -22px;
+  margin-left: 62px;
+  font-size: 14px;
+  float: left;
+}
+/* line 90, ../sass/_module.scss */
+.choice span {
+  color: #316745;
+  height: 50px;
+  font-weight: bold;
+}
+/* line 95, ../sass/_module.scss */
+.choice div {
+  margin-left: 72px;
+  margin-top: -19px;
+}
+/* line 99, ../sass/_module.scss */
+.choice a {
+  color: #a83a00;
+  padding: 0 2px;
+}
+/* line 102, ../sass/_module.scss */
+.choice a:hover {
+  text-decoration: underline;
+}
+
+/* line 107, ../sass/_module.scss */
+.com_route {
+  width: 400px;
+  margin-left: 75px;
+}
+
+/* line 112, ../sass/_module.scss */
+.qui_choice {
+  width: 200px;
+}

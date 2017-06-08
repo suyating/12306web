@@ -1,0 +1,71 @@
+/* arrow style */
+.arrow{
+	width: 0;
+    height: 0;
+    position: relative;
+    display: block;
+    line-height: 0;
+}
+.arrow-left{
+    top: 28px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #316745;
+    border-bottom: 10px solid transparent;
+} 
+.arrow-right {
+    top: -45px;
+    left: 190px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #316745;
+    border-bottom: 10px solid transparent;
+}
+
+.arrow-bottom{
+	top: 5px;
+    left: 49px;
+    /* text-align: center; */
+    display: none;
+    border-left: 10px solid transparent;
+    border-top: 10px solid #316745;
+    border-right: 10px solid transparent;
+}
+.arrow-bottom1{left: 25px;}
+.arrow-bottom4{left: 41px;}
+.arrow-top{
+	top: -12px;
+    left: 87px;
+	border-left: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    border-right: 5px solid transparent;
+}
+.arrow-bottom2{
+	top: -10px;
+    left: 87px;
+	border-left: 5px solid transparent;
+    border-top: 5px solid #fff;
+    border-right: 5px solid transparent;
+}
+.arrow-bottom3{
+	top: -10px;
+    left: 42px;
+	border-left: 5px solid transparent;
+    border-top: 5px solid #fff;
+    border-right: 5px solid transparent;
+}
+
+.date_left{
+    position: absolute;
+    left: 0px;
+    top: 94px;
+}
+.date_right{
+    position: absolute;
+    left: 667px;
+    top: 91px;
+}
+.date_close{
+    /* float: right; */
+    position: absolute;
+    left: 665px;
+    top: 10px;
+}

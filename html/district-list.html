@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>地区列表</title>
+    <style type="text/css">
+    .district-list {
+        width: 526px;
+        height: 208px;
+        background-color: #fdffde;
+        display: none;
+    }
+    /* .district-list div{
+        width: 90%;
+        height: 90%;
+        margin: 10px 10px;
+    } */
+    
+    .district-list tbody tr td {
+        margin: auto;
+        text-align: left;
+        font-size: 14px;
+        color: #789676;
+        padding: 4px 13px;
+        /* list-style: none; 
+          float: left; */
+    }
+    
+    .district-list-search {
+        height: 30px;
+        width: 400px;
+        margin: 8px auto;
+        font-weight: blod;
+        text-align: center;
+        border-bottom: 1px solid #000;
+    }
+    
+    .district-list-search span {
+        padding: 0 5px;
+    }
+    </style>
+    <script type="text/javascript">
+    function cityNameList() {
+        var district_list = document.getElementById("district-list");
+        var cityName = new Array(' ', '北京', '上海', '天津', '重庆', '长沙', '长春', '成都', '福州', '广州', '贵阳', '呼和浩特', '哈尔滨', '合肥', '杭州', '海口', '济南', '昆明', '拉萨', '兰州', '南宁', '南京', '南昌', '沈阳', '石家庄', '太原', '乌鲁木齐', '武汉', '西宁', '西安', '银川', '郑州', '深圳', '厦门');
+        var cityStr = "<tr>";
+        for (var i = 0; i < cityName.length; i++) {
+            cityStr += '<td>' + cityName[i] + '</td>';
+            if (i % 7 == 0) {
+                cityStr += '</tr><tr>'
+            }
+
+        }
+        /*break;*/
+        cityStr += '</tr>';
+        console.log(cityStr);
+        return cityStr;
+    }
+
+    function populateDistrict() {
+        var tbody = document.createElement('tbody');
+        document.getElementById('district-list-table').appendChild(tbody);
+        tbody.innerHTML = cityNameList();
+    }
+
+    function showCityPicker() {
+        document.getElementById("district-list").style.display = "block";
+    }
+    function init(){
+        document.getElementById("fromCity").addEventListener('focus',showCityPicker,false);
+    }
+    window.addEventListener('load',init,false);
+    </script>
+    <!-- <script type="text/javascript">
+                var cityName = new Array('北京','上海','天津','重庆','长沙','长春','成都','福州','广州','贵阳','呼和浩特','哈尔滨','合肥','杭州','海口','济南','昆明','拉萨','兰州','南宁','南京','南昌','沈阳','石家庄','太原','乌鲁木齐','武汉','西宁','西安','银川','郑州','深圳','厦门');
+                for (var i = 0; i < cityName.length; i++) {
+                    if (cityName[i]=="长沙" && cityName[i]=="重庆") {
+                        break;
+                    }
+                    document.write('<li>' + cityName[i] + '</li>');
+                    if(i%7==0){
+                        document.write('</tr>');
+                    }
+                }
+    </script> -->
+</head>
+
+<body>
+    <input type="button" name="button" id="fromCity" onclick="populateDistrict()" value="点击我" >
+    <div class="district-list" id="district-list">
+        <!-- <ul id="district-list-ul">
+            <li id="district-list-li">
+            </li>
+        </ul> -->
+        <div class="district-list-search">
+            <span>热门</span>
+            <span>ABCDE</span>
+            <span>FGHIJ</span>
+            <span>KLMNO</span>
+            <span>PQRST</span>
+            <span>UVWXYZ</span>
+        </div>
+        <table id="district-list-table">
+            <thead></thead>
+            <tbody align="center" id="district-list-table-tbody"></tbody>
+        </table>
+    </div>
+</body>
+
+</html>
